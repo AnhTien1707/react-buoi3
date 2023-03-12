@@ -1,0 +1,20 @@
+.cart i{
+    font-size: 30px;
+    cursor: pointer;
+}
+.cart{
+    text-align: right;
+    position: relative;
+    
+}
+.quality{
+    position: absolute;
+    border-radius: 50%;
+    background-color: #1A1A1A;
+    color: white;
+    padding: 0px 6px;
+    font-size: 16px;
+    top: -14px;
+    right: -16px;
+    text-align: center;
+}
