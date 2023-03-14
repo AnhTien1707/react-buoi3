@@ -2,7 +2,8 @@ import React, { Component } from "react";
 
 export default class ModalDefailProduct extends Component {
   render() {
-    const { cart } = this.props;
+    const { productDetails} = this.props;
+
     return (
       <div>
         <div
@@ -26,25 +27,25 @@ export default class ModalDefailProduct extends Component {
                 />
               </div>
               <div className="modal-body">
-                {cart.map((product,index)=> {
-                  return (<div key={index}>
-                    <div className="card" style={{ width: "100%" }}>
-                      <img src={product.image} className="card-img-top" alt="..." />
-                      <div className="card-body">
-                        <h5 className="card-title">Card title</h5>
-                        <p className="card-text">
-                          Some quick example text to build on the card title and
-                          make up the bulk of the card's content.
-                        </p>
-                      </div>
-                      <ul className="list-group list-group-flush">
-                        <li className="list-group-item">An item</li>
-                        <li className="list-group-item">A second item</li>
-                        <li className="list-group-item">A third item</li>
-                      </ul>
+              <div>
+                  <div className="card" style={{ width: "100%" }}>
+                    <img src={productDetails.image} className="card-img-top" alt="..."
+                    />
+                    <div className="card-body">
+                      <h4 className="card-title">Name : {productDetails.name}</h4>
+                      <h5 className="card-title">Adidas : {productDetails.alias}</h5>
+                      <p className="card-text">
+                      <b>Description:</b>{productDetails.description}
+                      </p>
                     </div>
-                  </div>)
-                })}
+                    <ul className="list-group list-group-flush">
+                    <li className="list-group-item">ShortDescription : {productDetails.shortDescription}</li>
+                      <li className="list-group-item">Quantity: {productDetails.quantity}</li>
+                      <li className="list-group-item"><b>Price</b> : ${productDetails.price}</li>
+                      
+                    </ul>
+                  </div>
+                </div>
               </div>
               <div className="modal-footer">
                 <button

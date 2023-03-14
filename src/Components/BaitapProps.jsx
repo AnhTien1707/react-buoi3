@@ -2,15 +2,15 @@ import React, { Component } from "react";
 import ModalProducts from "./ModalProducts.jsx";
 import ProductsList from "./ProductsList.jsx";
 import DataProducts from "../data/data.json";
-import ModalDetails from "./ModalDetailsProduct";
 import "./baiTapProps.css";
+import ModalDetails from "./ModalDetailsProduct";
 
 export default class BaitapProps extends Component {
   constructor(props){
     super(props);
     this.state = {
-     cart : [
-     ]
+    cart : [],
+    productDetails : [],
     }
   }
   addProduct = (productSelect) =>{
@@ -56,6 +56,11 @@ export default class BaitapProps extends Component {
       cart:cartUpdate,
     })
   }
+  details = (productDetails) =>{
+    this.setState({
+      productDetails:productDetails,
+    })
+  }
 
   render() {
     
@@ -70,8 +75,8 @@ export default class BaitapProps extends Component {
           <span className="quality">{quantityCart}</span>
         </div>
         <ModalProducts removeProduct = {this.removeProduct} cart = {this.state.cart} upDownQuantity={this.upDownQuantity}/>
-        <ProductsList ArrProducts={DataProducts}  addProduct = {this.addProduct}/>
-        <ModalDetails cart = {this.state.cart} ArrProducts ={DataProducts}/>
+        <ProductsList details = {this.details} ArrProducts={DataProducts}  addProduct = {this.addProduct}/>
+        <ModalDetails productDetails={this.state.productDetails}/>
       </div>
     );
   }

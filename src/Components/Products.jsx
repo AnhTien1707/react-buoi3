@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 export default class Products extends Component {
   render() {
-    const { product,detailProduct } = this.props;
-    const { addProduct } = this.props;
+    const { product } = this.props;
+    const { addProduct,details} = this.props;
     return (
       <div className="container">
         <div className="card" style={{ width: "18rem" }}>
@@ -30,7 +30,7 @@ export default class Products extends Component {
               data-bs-toggle="modal"
               data-bs-target="#exampleModal2"
               onClick={() =>{
-                detailProduct(product);
+                details(product);
               }}
             >
               Detail
